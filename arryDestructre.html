@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p style="color: blue;">JavaScript array elements are accessed using numeric indexes (starting from 1).</p>
+
+<p id="demo" style="color: rgb(224, 32, 32);"></p>
+
+<br>
+<br>
+<p style="color: blue;">insert the element at the start of the morePlaces array and print the new array</p>
+<p id="de" style="color: rgb(224, 32, 32);"></p>
+
+<br>
+<p style="color: blue;">take out last three element from the morePlacesArray and take out first three elements from the places array and combined array</p>
+<p id="newArry" style="color: rgb(224, 32, 32);"></p>
+<script>
+// Frist Assiment Code
+
+const places = ['delhi', 'gurgaon', 'jaipur', 'pune']
+let fLen = places.length;
+/* for (let i = 1; i < fLen.length; i++) {
+    //const element = array[i];
+    console.log(places[i]);
+    
+} */
+
+let text = "<ul>";
+for (let i = 1; i < fLen; i++) {
+  text += "<li>" + places[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text; 
+
+// Secound  Assiment Code 
+
+const morePlaces = ['kochi', 'hyderabad', 'Shimla', 'Srinagar']
+places.unshift("kochi"); // unshift is use for add arry element in frist position of create a new arry 
+document.getElementById("de").innerHTML = places; 
+
+// Thard Assiment Cod 
+
+//console.log(morePlaces.splice(1));
+//console.log(places.splice(1,3));
+
+let combined = morePlaces.slice(1).concat(places.splice(1,3)); 
+// .concat () is use for combined in two arry and .splice() is use for take one or more then element in arry then we use it
+//console.log(combined);
+document.getElementById("newArry").innerHTML = combined;
+
+// Fourth Assiment  code 
+
+const myData = {
+    name: "Rahul",
+    age: 20,
+    gender: "male",
+    address: {
+      pinCode: 123455,
+      city:"delhi"
+    },
+    likes:["music", "movies"]
+  }
+
+// destructure and store pincode into a vaiable named myPincode
+
+const {
+    address: { pinCode: myPincode },
+} = myData;
+
+
+// ============================================================================= //
+
+// destructure and store second like into a vaiable named myLike
+
+const {
+    likes: [one, myLike],
+} = myData;
+
+
+</script>
+
+</body>
+</html>
